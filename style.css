@@ -1,0 +1,173 @@
+body {
+    font-family: 'Noto Serif JP', serif;
+    background-color: #f7f7f7;
+    color: #333;
+    margin: 0;
+    padding: 2em;
+    text-align: center;
+  }
+
+  .aboutme {
+    display: flex;
+    flex-direction: column;     /* 上下に並べる */
+    align-items: center;        /* 中央寄せ */
+    gap: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .profile-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .profile-image {
+    width: 100%;
+    max-width: 2500px;           /* 画像の最大サイズ */
+    height: auto;
+  }
+  
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .gallery figure {
+    margin: 0;
+    text-align: center;
+    width: 280px;
+  }
+  
+  .gallery img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    filter: grayscale(100%);
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  
+  .gallery img:hover {
+    transform: scale(1.03);
+    filter: grayscale(0%);
+  }
+  
+  .gallery figcaption {
+    margin-top: 0.5em;
+    font-size: 0.95em;
+    color: #666;
+    font-family: 'Noto Serif JP', serif;
+  }
+
+  /* footerを画面の一番下に固定 */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+  }
+  
+  /* リンクの基本スタイル */
+a {
+    text-decoration: none; /* 下線を消す */
+    color: #333; /* 基本の文字色 */
+    font-family: 'Playfair Display', serif;
+    font-size: 1.0em;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease; /* 色の変化をスムーズに */
+  }
+  
+  /* リンクにホバーしたときのスタイル */
+  a:hover {
+    color: #2C6E49; /* ホバー時の文字色を変える */
+  }
+  
+  /* リンクに下線を追加 */
+  a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: #2C6E49; /* 下線の色 */
+    transition: width 0.3s ease; /* 下線のアニメーション */
+  }
+  
+  /* ホバー時に下線を表示 */
+  a:hover::after {
+    width: 100%;
+  }
+
+  @media screen and (max-width: 768px) {
+    /* aboutme セクションを小さな画面向けに調整 */
+    .aboutme {
+      max-width: 95%; /* 親要素の幅を95%に */
+      padding: 10px; /* パディングを少し減らす */
+    }
+  
+    /* プロフィール画像の調整 */
+    .profile-image {
+      width: 100%; /* 画像を画面に合わせてリサイズ */
+      max-width: 100%; /* 最大幅を画面幅に合わせる */
+    }
+  
+    /* ギャラリー画像の調整 */
+    .gallery {
+      flex-direction: column; /* ギャラリーを縦に並べる */
+      align-items: center; /* ギャラリーアイテムを中央寄せ */
+    }
+  
+    .gallery figure {
+      width: 100%; /* 画像の幅を親要素に合わせる */
+      margin-bottom: 20px; /* 各画像の間にスペースを追加 */
+    }
+  
+    .gallery img {
+      max-width: 100%; /* 画像を最大幅100%に */
+      border-radius: 8px; /* ボーダーを少し小さく */
+    }
+  
+    /* フッターを画面下部に固定 */
+    footer {
+      position: static; /* フッターがスクロールに合わせて動くように */
+      padding: 15px 0;
+    }
+  
+    /* リンクのフォントサイズを調整 */
+    a {
+      font-size: 0.9em; /* スマホ画面で少し小さく */
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    /* より小さい画面向けの調整 */
+    .aboutme {
+      max-width: 100%; /* 幅を100%に */
+    }
+  
+    .gallery figure {
+      width: 100%; /* ギャラリーアイテムを100%に */
+    }
+  
+    .gallery img {
+      max-width: 100%; /* 画像を100%に */
+    }
+    
+    /* フォントサイズ調整 */
+    .bio {
+      font-size: 14px; /* フォントサイズを少し小さく */
+    }
+  }
